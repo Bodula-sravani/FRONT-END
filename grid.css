@@ -1,0 +1,136 @@
+.grid1
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+    align-content: center;
+    grid-area: auto;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 100px;
+}
+
+.grid1item img:active
+{
+    transform: scale(2);
+}
+
+.grid1item img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    box-shadow: 6px 2px 4px rgba(0, 0, 0, 0.5);
+   
+}
+
+.grid2
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    align-items: center;
+    align-content: center;
+    grid-area: auto;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 100px; 
+    overflow: hidden;
+    white-space: nowrap;
+    animation: scrollAnimation 10s linear  infinite;
+    transform: translateX(20);
+  
+}
+
+
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    box-shadow: 6px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0);
+      }
+    20%
+    {
+        transform: translateX(20%);
+    }
+    50%
+    {
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(100%);
+      }
+  }
+
+  .grid2:hover {
+    animation-play-state: paused;
+  }
+
+  .grid2item1 img:hover {
+   transform: scale(2);
+  }
+
+  .grid2item2 img:hover {
+    transform: rotate(45deg);
+   }
+
+   .grid2item3 img:hover {
+   animation: fadeIn 1s forwards infinite
+   }
+
+   @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+
+  }
+   .grid2item4 img:hover {
+    animation: flip 2s infinite
+   }
+
+   @keyframes flip{
+    0%
+    {
+        transform: rotateY(0deg);
+    }
+    100%
+    { 
+        transform: rotateY(180deg);
+    }
+
+   }
+
+   .grid2item5 img:hover {
+    animation: pulse 1s  infinite
+    }
+    @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+   
+      .grid2item6 img:hover{
+        animation: parallaxAnimation 2s linear infinite;
+    }
+    
+    @keyframes parallaxAnimation {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+
