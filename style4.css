@@ -1,0 +1,46 @@
+   .links
+   {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+   }
+  .sidebar-link button {
+    display: block;
+    margin: 10px;
+    height: auto;
+    width: auto;
+    color: #7f2d2d; 
+  }
+  a{
+    text-decoration:none;
+  }
+  .sidebar-link button:hover {
+    background-color: #e39e9e;
+  }
+
+
+p{
+    text-align: center;
+    color: rgb(7, 5, 1);
+    font-size: x-large;
+}
+.container
+{
+    display: flex;
+    flex-direction:column-reverse;
+    background-color:#e39e9e;
+    align-items: center;
+    justify-content: center;
+    height:2000px;
+}
+.item{
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+

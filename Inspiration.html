@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inspiration Greeting Card</title>
+  <style>
+  body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://image.slidesdocs.com/responsive-images/background/handdrawn-style-blue-cute-education-math-lovely-powerpoint-background_a698b5341c__960_540.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: -1;
+  animation: pulseAnimation 5s infinite;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+    body {
+    background-image: url('https://image.slidesdocs.com/responsive-images/background/handdrawn-style-blue-cute-education-math-lovely-powerpoint-background_a698b5341c__960_540.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      width: 400px;
+      background-color: #FFF;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: flipCard 2s linear;
+    }
+
+    @keyframes flipCard {
+      0% {
+        transform: perspective(800px) rotateY(0deg);
+      }
+      100% {
+        transform: perspective(800px) rotateY(180deg);
+      }
+    }
+
+    .card:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background-image: linear-gradient(45deg, #FFC107, #FF5722);
+      border-radius: 30px;
+      z-index: -1;
+    }
+    h1 {
+      color: #790f0f;
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    p {
+      color: #6e0a0a;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #780c0c;
+    }
+
+    .quote::before {
+      content: open-quote;
+    }
+
+    .quote::after {
+      content: close-quote;
+    }
+
+    .image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      animation: imageAnimation 4s infinite linear;
+    }
+
+    @keyframes imageAnimation {
+        0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+    }
+
+    .shapes-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .shape {
+      position: absolute;
+    }
+
+    .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(131, 12, 12, 0.8);
+      animation: imageAnimation 1s infinite linear;
+    }
+    
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 50px solid rgba(115, 8, 8, 0.8);
+      animation: rotateAnimation 2s infinite linear;
+    }
+    @keyframes rotateAnimation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .rectangle {
+      width: 80px;
+      height: 40px;
+      background-color: rgba(110, 8, 8, 0.8);
+      animation: moveShape 10s infinite linear;
+    }
+    @keyframes moveShape {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(
+          calc(100vw - 100px),
+          calc(100vh - 100px)
+        );
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shapes-container">
+    <!-- <div class="shape rectangle" style="top: 100px; left: 1050px;"></div>
+    <div class="shape rectangle" style="top: 50px; left: 150px;"></div>
+    <div class="shape rectangle" style="top: 10px; left: 550px;"></div>
+    <div class="shape rectangle" style="top: 750px; left: 250px;"></div>
+    <div class="shape rectangle" style="top: 100px; left: 700px;"></div>
+    <div class="shape rectangle" style="top: 150px; left: 250px;"></div>
+    <div class="shape rectangle" style="top: 100px; left: 850px;"></div>
+    <div class="shape rectangle" style="top: 500px; left: 250px;"></div> -->
+
+    <!-- <div class="shape circle" style="top: 10px; left: 50px;"></div>
+    <div class="shape circle" style="top: 750px; left: 1080px;"></div>
+    <div class="shape circle" style="top: 600px; left: 1500px;"></div>
+    <div class="shape circle" style="top: 900px; left: 1750px;"></div>
+    <div class="shape circle" style="top: 600px; left: 850px;"></div>
+    <div class="shape circle" style="top: 100px; left: 700px;"></div>
+    <div class="shape circle" style="top: 150px; left: 150px;"></div>
+    <div class="shape circle" style="top: 200px; left: 350px;"></div>
+    <div class="shape circle" style="top: 850px; left: 5000px;"></div>
+    <div class="shape circle" style="top: 100px; left: 1000px;"></div>
+    <div class="shape circle" style="top: 150px; left: 800px;"></div>
+    <div class="shape circle" style="top: 2000px; left: 350px;"></div>
+    <div class="shape circle" style="top: 150px; left: 900px;"></div>
+    <div class="shape circle" style="top: 600px; left: 70px;"></div>
+    <div class="shape circle" style="top: 800px; left: 250px;"></div>
+    <div class="shape circle" style="top: 220px; left: 50px;"></div>
+    <div class="shape circle" style="top: 150px; left: 700px;"></div>
+    <div class="shape circle" style="top: 750px; left: 900px;"></div>
+    <div class="shape circle" style="top: 400px; left: 950px;"></div> -->
+
+    <div class="shape triangle" style="top: 70px; left: 50px;"></div>
+    <div class="shape triangle" style="top: 100px; left: 550px;"></div>
+    <div class="shape triangle" style="top: 300px; left: 350px;"></div>
+    <div class="shape triangle" style="top: 700px; left: 800px;"></div>
+    <div class="shape triangle" style="top: 200px; left: 1500px;"></div>   
+    <div class="shape triangle" style="top: 20px; left: 1050px;"></div>
+    <div class="shape triangle" style="top: 700px; left: 2000px;"></div>
+    <div class="shape triangle" style="top: 200px; left: 950px;"></div>
+    <div class="shape triangle" style="top: 600px; left: 150px;"></div>
+    <div class="shape triangle" style="top: 120px; left: 750px;"></div>
+    <div class="shape triangle" style="top: 500px; left: 350px;"></div>
+    <div class="shape triangle" style="top: 600px; left: 950px;"></div>
+    <div class="shape triangle" style="top: 100px; left: 650px;"></div>
+    <div class="shape triangle" style="top: 100px; left: 950px;"></div>
+    
+  </div>
+  <div class="card">
+    <div class="image">
+      <img src="C:\Users\HP\Downloads\ram.jpg" alt="Inspirational Person">
+    </div>
+    <h1>Srinivasa Ramanujan</h1>
+    <p>
+       Srinivasa Ramanujan, (born December 22, 1887, Erode, India—died April 26, 1920, Kumbakonam), Indian mathematician
+       whose contributions to the theory of numbers include pioneering discoveries of the properties of the partition function.
+      <br>
+      <br>
+      <span class="quote">An equation for me has no meaning, unless it expresses a thought of God</span>
+    </p>
+    <p>Thank you for being an inspiration to us all!</p>
+  </div>
+</body>
+</html>
+
+

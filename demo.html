@@ -1,0 +1,146 @@
+<!-- <html>
+    <head>
+        <link rel="stylesheet" href="demostyle.css">
+    </head>
+    <body>
+        <table>
+            <tbody>
+            <tr>
+
+        <td><p id="textid">Hai this is text, this is text and text </p>
+
+        <p id="text2">Hai Hello Hey Hai HEllo HAi HElo HAyy hey hey and ahd ahay ahagdjwu jaa </p>
+    </td>
+    <td>
+
+        <div id="circle">Scale</div>
+        <div id="div2d">Rotate</div>
+
+        
+    </td>
+        <td>
+            <div id="div1">Skew</div>
+            <div id = "div6">SkewX</div>
+            <div id="div7">SkewY</div>
+        </td>
+        <td>
+            <center>
+                <div id="div3">MATRIX</div>
+                <div id="div4">MATRIX</div>
+                <div id="div5">MATRIX</div>
+            </center>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="div8">Translate</div>
+        </td>
+        <td>
+            <div id="div9">ScaleX</div>
+        </td>
+        <td>
+            <div id="div10">ScaleY</div>
+        </td>
+    </tr>
+</tbody>
+</table>    
+</body>
+</html>  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Animation Demo</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .shape {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      border-radius: 50%;
+      margin: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .shape-1 {
+      background-color: red;
+      animation: moveAnimation 2s infinite;
+    }
+
+    @keyframes moveAnimation {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(200px, 200px);
+        background-color: blue;
+      }
+      100% {
+        transform: translate(0, 0);
+        background-color: red;
+      }
+    }
+
+    .shape-2 {
+      background-color: green;
+      opacity: 0;
+      animation: fadeAnimation 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeAnimation {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .shape-3 {
+      background-color: yellow;
+      animation: scaleAnimation 2s infinite;
+    }
+
+    @keyframes scaleAnimation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .shape-4 {
+      background-color: purple;
+      animation: rotateAnimation 2s infinite linear;
+    }
+
+    @keyframes rotateAnimation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+</body>
+</html>
+

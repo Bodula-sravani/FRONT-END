@@ -1,0 +1,49 @@
+.links
+{
+ display: flex;
+ align-content: center;
+flex-direction: row;
+ align-items: flex-end;
+ align-content: flex-end;
+ justify-content: flex-end;
+}
+
+.sidebar-link button {
+ display: block;
+ margin: 10px;
+ height: auto;
+ width: auto;
+ color:black;
+}
+a{
+ text-decoration:none;
+}
+.sidebar-link button:hover {
+ background-color: #605d5d;
+}
+
+p{
+    text-align: center;
+    color: rgb(7, 5, 1);
+    font-size: x-large;
+}
+.container
+{
+    display: flex;
+    flex-direction:column;
+    background-color: grey;
+    height: 1000px;
+    align-items: flex-end;
+    align-content: flex-end;
+
+}
+.item.item1
+{
+    flex-grow: 10;
+}
+
+img{
+    width:150px;
+    height:150px;
+    margin: 3px;
+}
