@@ -1,0 +1,217 @@
+<html>
+    <head>
+        <style>
+            .body
+            {
+                display: flex;
+                height: 1000px;
+                width: 1000px;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+            }
+            h1{
+                margin-top: 50px;
+                text-align: center;
+            }
+            /* .bakery{
+                display: flex;
+                width: 500px;
+                height: 200px;
+                border-radius: 4%;
+                box-shadow: 1px 1px 1px black;
+                background-color: grey;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+            } */
+            .discount{
+                /* margin-top: 100px; */
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+            }
+            .admissions{
+                /* margin-top: 100px; */
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+            }
+            .gifts{
+                /* margin-top: 100px; */
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+
+            }
+            .result
+            {
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+            }
+            .result2
+            {
+                display: flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+            }
+        </style>
+       <script>
+        var users = {};
+        function bakery()
+        {
+            var user = document.getElementById("user").value;
+            var price = document.getElementById("price").value;
+            var day = document.getElementById("day").value;
+            if(users[user]==null)
+            {
+                users[user] = [day];
+            }
+            else
+            {
+                if (!users[user].includes(day)) 
+                {
+                    users[user].push(day);
+                }
+                else
+                {
+                    console.log("You have already submitted a bill today." +
+                    "Only the first bill of the day will be taken into account.");
+                    var result = "You have already submitted a bill today." +
+                    "Only the first bill of the day will be taken into account."
+                    document.getElementById("result").innerHTML = result;
+                    return;
+                }
+                
+            }
+            console.log("user",user);
+            console.log("price",price);
+            console.log("day",day);
+            const discounts = [15, 10, 12, 11, 13, 14, 15];
+            const discount = discounts[day];
+            const discountedPrice = price - (price * (discount / 100));
+            console.log(discountedPrice);
+           var result = `Discounted price: Rs.${discountedPrice}`;
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function admissions()
+        {
+            var percentage = document.getElementById("percentage").value;
+            var result="";
+            if(percentage>=90)
+            {
+                result="Outstanding to admit";
+            }
+            else if(percentage>=70 && percentage<90)
+            {
+                result="Good to admit";
+            }
+            else if(percentage>=50 && percentage<70)
+            {
+                result="Acceptable to admit";
+            }
+            else{
+                result="Admission Application Rejected";
+            }
+            document.getElementById("result2").innerHTML = result;
+        }
+
+        var userVisits ={};
+        function gifts()
+        {
+            var user = document.getElementById("usergifts").value;
+            var price = document.getElementById("giftprice").value;
+            var gift = 0;
+            if(userVisits[user]==null)
+            {
+                userVisits[user]=1;
+            }
+            else
+            {
+                userVisits[user] +=1;
+                gift += 100;
+            }
+            if(price>5000) 
+            {
+                gift+=3000;
+            }
+            else if(price>3000) 
+            {
+                gift+=1500;
+            }
+            else if(price>1000)
+            { 
+                gift+=500;
+            }
+            else
+            { 
+                gift+=0;
+            }
+            var result = "You got " + gift +" GV"
+            document.getElementById("result3").innerHTML = result;
+
+        }
+       </script>
+    </head>
+    <body>
+    <div class="bakery">
+        <h1>Platina Bakery</h1>
+        <div class="discount">
+            <select id="user" name="users" style="margin-right: 2px;">users
+                <option  value="1">User 1</option>
+                <option  value="2">User 2</option>
+                <option value="3">User 3</option>
+                <option  value="4">User 4</option>
+            </select>
+            <input type="number"  id="price" placeholder="Enter Price"  style="margin-right: 2px;">
+            <select id="day" name="Days" style="margin-right: 2px;">Day
+                <option  value="0">Sunday</option>
+                <option  value="1">Monday</option>
+                <option  value="2">Tuesday</option>
+                <option  value="3">Wednesday</option>
+                <option  value="4">Thursday</option>
+                <option  value="5">Friday</option>
+                <option  value="6">Saturday</option>
+            </select>
+            <button  style="margin-right: 2px;" onclick="bakery()">Discount</button>
+        </div>
+        <br>
+        <div class="result" style="margin-left: 2px;">
+           <p id="result"></p>
+        </div>
+    </div>
+    <h1>Bharat school admissions</h1>
+    <div class="admissions">
+        <input type="number" id="percentage" placeholder="Enter percentage"  style="margin-right: 2px;">
+        <button  style="margin-right: 2px;" onclick="admissions()">Admission</button>
+        <div class="result2" style="margin-left: 2px;">
+            <p id="result2"></p>
+         </div>
+    </div>
+    <h1>Sopping Mall</h1>
+    <div class="gifts">
+
+        <select id="usergifts" name="users" style="margin-right: 2px;">users
+            <option  value="1">User 1</option>
+            <option  value="2">User 2</option>
+            <option  value="3">User 3</option>
+            <option  value="4">User 4</option>
+        </select>
+        <input type="number" id="giftprice" placeholder="Enter price"  style="margin-right: 2px;">
+        <button  style="margin-right: 2px;" onclick="gifts()">Gifts</button>
+        <div class="result3" style="margin-left: 2px;">
+            <p id="result3"></p>
+         </div>
+    </div>
+    </body>
+</html>

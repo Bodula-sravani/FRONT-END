@@ -1,0 +1,51 @@
+<html>
+<head>
+<script>
+function comparison()
+{
+
+    const a = document.getElementById("num1").value;
+    const b = document.getElementById("num2").value;
+    console.log("Equals: ",a==b);
+    console.log("Triple Equals: ",a===b);
+    console.log("Not equal: ",a!=b);
+    console.log("Greater than: ",a>b);
+    console.log("less than: ",a<b);
+
+}
+
+function arithemtic()
+{
+    var a = document.getElementById("num1").value;
+    var b = document.getElementById("num2").value;
+    console.log("add: ",parseInt(a) + parseInt(b));
+    console.log("sub: ",a-b);
+    console.log("mul: ",a*b);
+    console.log("div: ",a/b);
+    console.log("mod: ",a%b);
+}
+
+function logical()
+{
+    var a = document.getElementById("num1").value;
+    var b = document.getElementById("num2").value;
+    var result = (a < 10 && b > 5);
+    console.log("and: ",result); 
+
+    var result2 = (a > 10 || b < 5);
+    console.log("or:",result2);
+
+    console.log("not:",!a);
+}
+
+</script>
+</head>
+<body>
+    <input type="number" name="a" id="num1">
+    <input type="number" name="b" id="num2">
+    <button onclick=comparison()>comparison</button>
+    <button onclick=arithemtic()>arithemtic</button>
+    <button onclick=logical()>logical</button>
+</body>
+</html>
+

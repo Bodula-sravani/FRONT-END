@@ -35,7 +35,7 @@
     margin-top: 100px; 
     overflow: hidden;
     white-space: nowrap;
-    animation: scrollAnimation 10s linear  infinite;
+    animation: scrollAnimation 15s linear  infinite;
     transform: translateX(20);
   
 }
